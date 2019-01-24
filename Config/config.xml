@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<config xmlns="http://thelia.net/schema/dic/config"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://thelia.net/schema/dic/config http://thelia.net/schema/dic/config/thelia-1.0.xsd">
+
+    <forms>
+        <form name="admin.order.comment.form" class="AdminOrderComment\Form\CommentForm" />
+    </forms>
+
+    <hooks>
+        <hook id="admin.order.comment.hook.back" class="AdminOrderComment\Hook\BackHook" scope="request">
+            <tag name="hook.event_listener" type="back" event="order-edit.after-order-product-list" method="onOrderEditAfterOrderProductList"/>
+        </hook>
+    </hooks>
+</config>
